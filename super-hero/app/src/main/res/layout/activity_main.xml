@@ -22,7 +22,7 @@
             />
 
         <EditText
-            id="@+id/hero_name_edit"
+            android:id="@+id/hero_name_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/hero_image"
@@ -32,7 +32,7 @@
             />
 
         <EditText
-            id="@+id/hero_alter_ego_edit"
+            android:id="@+id/hero_alter_ego_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/hero_image"
