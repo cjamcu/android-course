@@ -2,6 +2,7 @@ package com.cjamcu.earthquakemonitor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cjamcu.earthquakemonitor.databinding.ActivityMainBinding
 
@@ -24,10 +25,16 @@ class MainActivity : AppCompatActivity() {
         eqList.add(Earthquake("7", "Caracas", 4.5, 1634178860, -66.9, 10.5))
         eqList.add(Earthquake("8", "Quito", 3.1, 1634178860, -78.5, -0.2))
         eqList.add(Earthquake("9", "Montevideo", 2.8, 1634178860, -56.2, -34.9))
+
         val adapter = EqAdapter()
         binding.recyclerView.adapter = adapter
-
         adapter.submitList(eqList)
+
+        if(eqList.isEmpty()){
+            binding.eqEmptyView.visibility = View.VISIBLE
+        }else{
+            binding.eqEmptyView.visibility = View.GONE
+        }
 
 
     }

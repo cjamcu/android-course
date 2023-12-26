@@ -18,5 +18,17 @@
             tools:listitem="@layout/eq_list_item"
             />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="16dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/no_earthquakes_found"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:id="@+id/eq_empty_view"
+            android:visibility="gone"
+            android:layout_height="wrap_content" />
+
     </FrameLayout>
 </layout>

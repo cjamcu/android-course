@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Earthquake Monitor</string>
+    <string name="no_earthquakes_found">No Earthquakes Found</string>
 </resources>
