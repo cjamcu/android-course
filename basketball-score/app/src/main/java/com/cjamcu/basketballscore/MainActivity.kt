@@ -1,50 +1,49 @@
 package com.cjamcu.basketballscore
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import com.cjamcu.basketballscore.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    private var localScore = 0
-    private var visitorScore = 0
 
+    private lateinit var viewModel: MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
         val localScoreText = binding.localScoreText
         val visitorScoreText = binding.visitorScoreText
         binding.localMinusButton.setOnClickListener {
-            if (localScore > 0) {
-                localScore--
-                localScoreText.text = localScore.toString()
-            }
+            viewModel.minusPointsToScore(1, true)
+            localScoreText.text = viewModel.localScore.toString()
+
         }
 
         binding.localPlusButton.setOnClickListener {
-            localScore++
-            localScoreText.text = localScore.toString()
+            viewModel.addPointsToScore(1, true)
+            localScoreText.text = viewModel.localScore.toString()
         }
 
         binding.visitorMinusButton.setOnClickListener {
-            if (visitorScore > 0) {
-                visitorScore--
-                visitorScoreText.text = visitorScore.toString()
-            }
+            viewModel.minusPointsToScore(1, false)
+            visitorScoreText.text = viewModel.visitorScore.toString()
+
         }
 
         binding.visitorPlusButton.setOnClickListener {
-            visitorScore++
-            visitorScoreText.text = visitorScore.toString()
+            viewModel.addPointsToScore(1, false)
+            visitorScoreText.text = viewModel.visitorScore.toString()
         }
 
         binding.restartButton.setOnClickListener {
-            localScore = 0
-            visitorScore = 0
-            visitorScoreText.text = localScore.toString()
-            localScoreText.text = visitorScore.toString()
+            viewModel.resetScore()
+            localScoreText.text = viewModel.localScore.toString()
+            visitorScoreText.text = viewModel.visitorScore.toString()
         }
     }
 }
