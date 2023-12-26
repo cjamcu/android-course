@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/eq_magnitude_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="4.3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/eq_place_text"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="80 KM E NY"
+        android:layout_toStartOf="@id/eq_arrow_icon"
+        android:layout_toEndOf="@id/eq_magnitude_text"
+/>
+
+    <ImageView
+        android:id="@+id/eq_arrow_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/chevron_right_black"
+        android:layout_alignParentEnd="true"
+
+        android:contentDescription="Icon" />
+
+
+</RelativeLayout>
