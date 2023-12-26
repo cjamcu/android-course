@@ -7,6 +7,8 @@ import com.cjamcu.superhero.databinding.ActivityDetailBinding
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val SUPER_HERO_KEY = "superHero"
+        const val BITMAP_KEY = "bitmap"
+
 
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,6 +17,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val bundle = intent.extras!!
+        binding.heroImage.setImageBitmap(bundle.getParcelable(BITMAP_KEY))
         binding.superHero = bundle.getParcelable<SuperHero>(SUPER_HERO_KEY)!!
 
     }
