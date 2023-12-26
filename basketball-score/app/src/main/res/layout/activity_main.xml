@@ -4,6 +4,10 @@
 
     <data>
 
+        <variable
+            name="mainViewModel"
+            type="com.cjamcu.basketballscore.MainViewModel" />
+
     </data>
 
     <RelativeLayout
@@ -19,6 +23,7 @@
             android:layout_alignParentEnd="true"
             android:layout_margin="16dp"
             android:layout_centerVertical="true"
+            android:onClick="@{() -> mainViewModel.resetScore()}"
             android:src="@drawable/ic_restore_black" />
 
         <TextView
@@ -75,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus_one"
+                android:onClick="@{() -> mainViewModel.minusPointsToScore(1, true)}"
                 android:textSize="24sp" />
 
             <TextView
@@ -98,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus_one"
+                android:onClick="@{() -> mainViewModel.addPointsToScore(1, true)}"
                 android:textSize="24sp" />
 
                 <Button
@@ -105,6 +112,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/plus_two"
+                    android:onClick="@{() -> mainViewModel.addPointsToScore(2, true)}"
                     android:textSize="24sp" />
 
                 <Button
@@ -112,6 +120,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/plus_three"
+                    android:onClick="@{() -> mainViewModel.addPointsToScore(3, true)}"
                     android:textSize="24sp" />
 
             </LinearLayout>
@@ -134,6 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus_one"
+                android:onClick="@{() -> mainViewModel.minusPointsToScore(1, false)}"
                 android:textSize="24sp" />
 
             <TextView
@@ -157,6 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/plus_one"
+                    android:onClick="@{() -> mainViewModel.addPointsToScore(1, false)}"
                     android:textSize="24sp" />
 
                 <Button
@@ -164,6 +175,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/plus_two"
+                    android:onClick="@{() -> mainViewModel.addPointsToScore(2, false)}"
                     android:textSize="24sp" />
 
                 <Button
@@ -171,6 +183,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/plus_three"
+                    android:onClick="@{() -> mainViewModel.addPointsToScore(3, false)}"
                     android:textSize="24sp" />
             </LinearLayout>
 

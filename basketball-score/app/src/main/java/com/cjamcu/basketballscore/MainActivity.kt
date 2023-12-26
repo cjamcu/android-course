@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
+        binding.mainViewModel = viewModel
+
         viewModel.localScore.observe(this) {
             binding.localScoreText.text = it.toString()
         }
@@ -25,51 +27,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        // Minus local
-        binding.localMinusButton.setOnClickListener {
-            viewModel.minusPointsToScore(1, true)
-        }
-
-        binding.visitorMinusButton.setOnClickListener {
-            viewModel.minusPointsToScore(1, false)
-        }
-
-        binding.localPlusButton.setOnClickListener {
-            viewModel.addPointsToScore(1, true)
-        }
-
-        binding.localPlusTwoButton.setOnClickListener {
-            viewModel.addPointsToScore(2, true)
-        }
-
-        binding.localPlusThreeButton.setOnClickListener {
-            viewModel.addPointsToScore(3, true)
-        }
 
 
 
-        binding.visitorMinusButton.setOnClickListener {
-            viewModel.minusPointsToScore(1, false)
-        }
-
-        binding.visitorPlusButton.setOnClickListener {
-            viewModel.addPointsToScore(1, false)
-        }
-
-
-        binding.visitorPlusTwoButton.setOnClickListener {
-            viewModel.addPointsToScore(2, false)
-        }
-
-
-        binding.visitorPlusThreeButton.setOnClickListener {
-            viewModel.addPointsToScore(3, false)
-        }
-
-
-
-        binding.restartButton.setOnClickListener {
-            viewModel.resetScore()
-        }
     }
 }
