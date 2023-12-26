@@ -1,9 +1,7 @@
 package com.cjamcu.earthquakemonitor
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +18,8 @@ class EqAdapter : ListAdapter<Earthquake, EqAdapter.EqViewHolder>(DiffCallback) 
         }
 
     }
+
+    lateinit var onItemClickListener: (Earthquake) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EqAdapter.EqViewHolder {
 
@@ -41,6 +41,9 @@ class EqAdapter : ListAdapter<Earthquake, EqAdapter.EqViewHolder>(DiffCallback) 
         fun bind(eq: Earthquake) {
             binding.eqMagnitudeText.text = eq.magnitude.toString()
             binding.eqPlaceText.text = eq.place
+            binding.root.setOnClickListener {
+                onItemClickListener(eq)
+            }
         }
 
     }
