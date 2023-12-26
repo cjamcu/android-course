@@ -8,5 +8,6 @@ class SuperHero (
     val name: String,
     val alterEgo: String,
     val bio: String,
-    val power: Float
+    val power: Float,
+    val image: String
 ) : Parcelable

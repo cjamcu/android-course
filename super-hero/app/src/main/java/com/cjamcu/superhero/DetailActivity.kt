@@ -1,5 +1,6 @@
 package com.cjamcu.superhero
 
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.cjamcu.superhero.databinding.ActivityDetailBinding
@@ -7,7 +8,7 @@ import com.cjamcu.superhero.databinding.ActivityDetailBinding
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val SUPER_HERO_KEY = "superHero"
-        const val BITMAP_KEY = "bitmap"
+
 
 
     }
@@ -17,8 +18,12 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val bundle = intent.extras!!
-        binding.heroImage.setImageBitmap(bundle.getParcelable(BITMAP_KEY))
-        binding.superHero = bundle.getParcelable<SuperHero>(SUPER_HERO_KEY)!!
+        val  hero = bundle.getParcelable<SuperHero>(SUPER_HERO_KEY)!!
+        val bitmap = BitmapFactory.decodeFile(hero.image)
+
+        binding.heroImage.setImageBitmap(bitmap)
+
+        binding.superHero = hero
 
     }
 }
