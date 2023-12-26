@@ -88,12 +88,34 @@
                 android:text="@string/zero"
                 tools:text="62" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
             <Button
                 android:id="@+id/local_plus_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus_one"
                 android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/local_plus_two_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plus_two"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/local_plus_three_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plus_three"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
@@ -125,12 +147,32 @@
                 android:text="@string/zero"
                 tools:text="48" />
 
-            <Button
-                android:id="@+id/visitor_plus_button"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/plus_one"
-                android:textSize="24sp" />
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/visitor_plus_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plus_one"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/visitor_plus_two_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plus_two"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/visitor_plus_three_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plus_three"
+                    android:textSize="24sp" />
+            </LinearLayout>
 
         </LinearLayout>
 
