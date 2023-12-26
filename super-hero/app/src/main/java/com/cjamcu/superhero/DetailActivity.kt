@@ -15,15 +15,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val bundle = intent.extras!!
-
-        val superHero = bundle.getParcelable<SuperHero>(SUPER_HERO_KEY)!!
-
-        binding.heroName.text = superHero.name
-        binding.alterEgoText.text =  superHero.alterEgo
-        binding.bioText.text =  superHero.bio
-        binding.ratingBar.rating = superHero.power
-
-
+        binding.superHero = bundle.getParcelable<SuperHero>(SUPER_HERO_KEY)!!
 
     }
 }
