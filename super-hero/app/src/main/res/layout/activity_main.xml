@@ -7,19 +7,114 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="16dp"
         tools:context=".MainActivity">
 
+        <ImageView
+            android:id="@+id/hero_image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="@string/app_name"
+            />
+
+        <EditText
+            id="@+id/hero_name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/hero_image"
+            android:layout_alignTop="@id/hero_image"
+            android:layout_marginStart="16dp"
+            android:hint="Superhero Name"
+            />
+
+        <EditText
+            id="@+id/hero_alter_ego_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/hero_image"
+            android:layout_alignBottom="@id/hero_image"
+            android:layout_marginStart="16dp"
+            android:hint="Alter Ego"
+            />
+
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/hero_image"
+            android:layout_marginTop="16dp"
+            android:background="@color/black"
+            />
+
+
         <TextView
+            android:id="@+id/hero_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider"
+            android:layout_marginTop="16dp"
+            android:text="Superhero Bio"
+            android:gravity="center"
+            android:textSize="18sp"
+
+            />
+
+        <EditText
+            android:id="@+id/hero_bio_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hero_bio"
+            android:layout_marginTop="16dp"
+            android:hint="Bio"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:maxLines="5"
+            android:minLines="5"
+            android:scrollbars="vertical"
+            />
+
+        <TextView
+            android:id="@+id/hero_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hero_bio_edit"
+            android:layout_marginTop="16dp"
+            android:text="Power"
+            android:gravity="center"
+            android:textSize="18sp"
+
+            />
+        <RatingBar
+            android:id="@+id/rating_bar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_below="@id/hero_rating"
+            android:layout_marginTop="16dp"
+            android:numStars="5"
+            android:stepSize="1"
+            android:rating="3"
+            android:layout_centerHorizontal="true"
+            android:progressTint="@color/yellow"
+            />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_alignParentBottom="true"
+            />
+
+
+
+
+
+
+    </RelativeLayout>
 </layout>
