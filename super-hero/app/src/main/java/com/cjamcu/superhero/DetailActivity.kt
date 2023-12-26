@@ -6,10 +6,8 @@ import com.cjamcu.superhero.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     companion object {
-        const val SUPER_HERO_NAME_KEY = "superHeroName"
-        const val ALTER_EGO_KEY = "alterEgo"
-        const val BIO_KEY = "bio"
-        const val POWER_KEY = "power"
+        const val SUPER_HERO_KEY = "superHero"
+
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,15 +16,12 @@ class DetailActivity : AppCompatActivity() {
 
         val bundle = intent.extras!!
 
-        val superHeroName = bundle.getString(SUPER_HERO_NAME_KEY)
-        val alterEgo = bundle.getString (ALTER_EGO_KEY)
-        val bio = bundle.getString (BIO_KEY)
-        val power = bundle.getFloat(POWER_KEY)
+        val superHero = bundle.getParcelable<SuperHero>(SUPER_HERO_KEY)!!
 
-        binding.heroName.text = superHeroName
-        binding.alterEgoText.text = alterEgo
-        binding.bioText.text = bio
-        binding.ratingBar.rating = power
+        binding.heroName.text = superHero.name
+        binding.alterEgoText.text =  superHero.alterEgo
+        binding.bioText.text =  superHero.bio
+        binding.ratingBar.rating = superHero.power
 
 
 

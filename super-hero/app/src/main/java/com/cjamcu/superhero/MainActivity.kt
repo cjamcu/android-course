@@ -17,18 +17,15 @@ class MainActivity : AppCompatActivity() {
             val bio = binding.heroBioEdit.text.toString()
             val power = binding.ratingBar.rating
 
-
-
-            openDetailActivity(superHeroName, alterEgo, bio, power)
+            val superHero = SuperHero(superHeroName, alterEgo, bio, power)
+            openDetailActivity(superHero)
         }
     }
 
-    private fun openDetailActivity( superHeroName: String, alterEgo: String, bio: String, power: Float) {
+    private fun openDetailActivity( superHero: SuperHero) {
         val intent =  Intent(this, DetailActivity::class.java)
-        intent.putExtra(DetailActivity.SUPER_HERO_NAME_KEY, superHeroName)
-        intent.putExtra(DetailActivity.ALTER_EGO_KEY, alterEgo)
-        intent.putExtra(DetailActivity.BIO_KEY, bio)
-        intent.putExtra(DetailActivity.POWER_KEY, power)
+        intent.putExtra(DetailActivity.SUPER_HERO_KEY, superHero)
+
         startActivity(intent)
     }
 }
